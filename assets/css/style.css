@@ -1,0 +1,262 @@
+/* Framework Imports
+============================================================================*/
+@import url(../../bower_components/normalize-css/normalize.css);
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* Custom Mixins
+============================================================================*/
+/* Custom Vars
+============================================================================*/
+/* HTML / Body
+============================================================================*/
+html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow: visible; }
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow: visible; }
+
+/* Fonts
+============================================================================*/
+@font-face {
+  font-family: 'steagal_ze_light';
+  src: url("../fonts/ze_steagal/zeiteffekt_steagal_light-webfont.eot");
+  src: url("../fonts/ze_steagal/zeiteffekt_steagal_light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ze_steagal/zeiteffekt_steagal_light-webfont.woff") format("woff"), url("../fonts/ze_steagal/zeiteffekt_steagal_light-webfont.ttf") format("truetype"), url("../fonts/ze_steagal/zeiteffekt_steagal_light-webfont.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'steagal_ze_medium';
+  src: url("../fonts/ze_steagal/zeiteffekt_steagal_medium-webfont.eot");
+  src: url("../fonts/ze_steagal/zeiteffekt_steagal_medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ze_steagal/zeiteffekt_steagal_medium-webfont.woff") format("woff"), url("../fonts/ze_steagal/zeiteffekt_steagal_medium-webfont.ttf") format("truetype"), url("../fonts/ze_steagal/zeiteffekt_steagal_medium-webfont.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'steagal_ze_regular';
+  src: url("../fonts/ze_steagal/zeiteffekt_steagal_regular-webfont.eot");
+  src: url("../fonts/ze_steagal/zeiteffekt_steagal_regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ze_steagal/zeiteffekt_steagal_regular-webfont.woff") format("woff"), url("../fonts/ze_steagal/zeiteffekt_steagal_regular-webfont.ttf") format("truetype"), url("../fonts/ze_steagal/zeiteffekt_steagal_regular-webfont.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* Type
+============================================================================*/
+p, h1, h2 {
+  color: #fff; }
+
+p {
+  font-family: 'steagal_ze_light';
+  font-weight: normal;
+  font-size: 0.9375em;
+  line-height: 1.5; }
+
+h1 {
+  font-family: 'steagal_ze_medium';
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 2.1875em; }
+
+h2 {
+  font-family: 'steagal_ze_medium';
+  color: #333333;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 2.1875em;
+  text-align: left; }
+
+/* Full Screen BG
+============================================================================*/
+#header-cover {
+  background-position: right top;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  z-index: 300;
+  width: 100%;
+  min-height: 400px;
+  max-height: 520px;
+  height: 100%; }
+
+#page-wrap {
+  position: relative;
+  z-index: 500; }
+
+/* Nav Toggle
+============================================================================*/
+#toggle {
+  display: block;
+  width: 30px; }
+
+/* Page Sections
+============================================================================*/
+header {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  height: 520px;
+  -webkit-transition: height 0.3s ease-out;
+  -moz-transition: height 0.3s ease-out;
+  -o-transition: height 0.3s ease-out;
+  transition: height 0.3s ease-out; }
+  header:after {
+    content: "";
+    display: table;
+    clear: both; }
+  header .header-wrap {
+    background-color: transparent !important;
+    padding: 20px; }
+    header .header-wrap .intro {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%;
+      margin-top: 250px;
+      /* circle experiment 
+      border-radius: 5000px;
+      padding: 30px;
+      margin-top: 190px;
+      text-align: center;
+      width: 280px;
+      height: 280px;
+      @include center-block(); */ }
+      header .header-wrap .intro:last-child {
+        margin-right: 0; }
+      header .header-wrap .intro h1 {
+        margin-bottom: 0; }
+
+.section-wrap {
+  background-color: #f2f0ed; }
+  .section-wrap section {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px; }
+    .section-wrap section:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .section-wrap section .content {
+      display: block;
+      padding: 20px; }
+      .section-wrap section .content:after {
+        content: "";
+        display: table;
+        clear: both; }
+      .section-wrap section .content h2 {
+        margin: 0; }
+
+/* Responsive
+============================================================================*/
+.indicator {
+  width: 50px;
+  height: 50px;
+  background-color: #f3b32a; }
+
+/* XXS Extra small devices (phones, up to 480px) */
+/* No media query since this is the default size */
+/* XS Extra Breakpoint  */
+@media (min-width: 480px) {
+  .indicator {
+    background-color: #49b4ce; }
+
+  h1 {
+    font-size: 2.5em; }
+
+  /* Borders */
+  #top, #bottom, #left, #right {
+    background: #fff;
+    position: fixed;
+    z-index: 600; }
+
+  #left, #right {
+    top: 0;
+    bottom: 0;
+    width: 20px; }
+
+  #left {
+    left: 0; }
+
+  #right {
+    right: 0; }
+
+  #top, #bottom {
+    left: 0;
+    right: 0;
+    height: 20px; }
+
+  #top {
+    top: 0; }
+
+  #bottom {
+    bottom: 0; }
+
+  #header-cover {
+    min-height: 700px;
+    max-height: 520px; }
+
+  header {
+    height: 700px; }
+    header .header-wrap {
+      padding: 40px; }
+      header .header-wrap .intro {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 82.94039%; }
+        header .header-wrap .intro:last-child {
+          margin-right: 0; }
+
+  .section-wrap section .content {
+    padding: 40px; } }
+/* SM Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .indicator {
+    background-color: #1e9c5b; }
+
+  h1 {
+    font-size: 3.125em; }
+
+  header .header-wrap .intro {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%; }
+    header .header-wrap .intro:last-child {
+      margin-right: 0; }
+
+  #header-cover {
+    min-height: 700px;
+    max-height: 520px; } }
+/* MD Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .indicator {
+    background-color: #f05622; }
+
+  h1 {
+    font-size: 3.75em; }
+
+  header .header-wrap .intro {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%; }
+    header .header-wrap .intro:last-child {
+      margin-right: 0; } }
+/* LG Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .indicator {
+    background-color: #da453d; }
+
+  h1 {
+    font-size: 4.375em; }
+
+  #header-cover {
+    min-height: 700px;
+    max-height: 520px; } }
