@@ -11,7 +11,8 @@
 	<!-- css -->
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link type="text/css" rel="stylesheet" href="demo.css" />
-	<link type="text/css" rel="stylesheet" href="assets/menu/css/jquery.mmenu.all.css" />	
+	<link type="text/css" rel="stylesheet" href="assets/menu/css/jquery.mmenu.all.css" />
+	<link type="text/css" rel="stylesheet" href="assets/menu/css/extensions/jquery.mmenu.positioning.css" />	
 	<!-- mobile -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- JS -->
@@ -20,51 +21,53 @@
 	<script src="assets/js/respond.min.js" type="text/javascript"></script>
 	
 	<script type="text/javascript" src="assets/menu/js/jquery.mmenu.js"></script>
-	<script type="text/javascript">	
-	
-		$(function() {
-			var $menu = $('nav#menu'),
-				$html = $('html, body');
-
-			$menu.mmenu();
-			$menu.find( 'li > a' ).on(
-				'click',
-				function()
-				{
-					var href = $(this).attr( 'href' );
-
-					//	if the clicked link is linked to an anchor, scroll the page to that anchor 
-					if ( href.slice( 0, 1 ) == '#' )
-					{
-						$menu.one(
-							'closed.mm',
-							function()
-							{
-								setTimeout(
-									function()
-									{
-										$html.animate({
-											scrollTop: $( href ).offset().top
-										});	
-									}, 10
-								);	
-							}
-						);						
-					}
-				}
-			);
-		});
+	<script type="text/javascript">
+	   $(function() {
+	      $("#menu").mmenu({
+	         position: "right",
+	         zposition: "push"
+	      });
+	   });
 	</script>	
-	<!-- Icons -->
+	<!-- Testing -->
+	<style type="text/css">
+		#navbar {
+			position: fixed;
+			width: 100%;
+	
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-ms-box-sizing: border-box;
+			-o-box-sizing: border-box;
+			box-sizing: border-box;
+			z-index: 500;
+			overflow: hidden;
+		}
+		#toggle {
+			float: right;
+			margin-top: 30px;
+			margin-right: 30px;
+			width: 40px;
+			height: 40px;
+			padding: 10px;
+			background-color: rgba(0,0,0,0.2);
+		}
+		#toggle img {
+			width: 20px;
+			height: 20px;
+		}
+	</style>
 	
 </head>
 	<body>	
 		
 		<div id="page-wrap">
+			<div id="navbar" class="mm-fixed-top">
+				<a href="#menu" id="toggle" title="Nav Toggle"><img src="assets/img/nav-toggle.svg" alt="Nav Toggle"></a>
+			</div>
 			<header id="header">
 				<section class="header-wrap">
 					<!-- <div class="indicator"><a href="#menu">click me</a></div> -->
-					<a href="#menu" id="toggle" title="Nav Toggle"><img src="assets/img/nav-toggle.svg" alt="Nav Toggle"></a>
 					<div class="intro">
 						<h1 id="title">greetings</h1>
 						<h2>I'm Matt. A Digital Professional with a background in UI Design.</h2>

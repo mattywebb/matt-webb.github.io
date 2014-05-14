@@ -18,7 +18,7 @@ $(document).ready(function (){
 		var UserScroll;
 	    	UserScroll = $(this).scrollTop();
 	
-		if ( $(document).scrollTop() <= 900 ) {
+		if ( $(document).scrollTop() <= 1680 ) {
 			
 			$('#header-cover').css({
 	    		//'opacity' :  1-(UserScroll/600),
@@ -27,7 +27,7 @@ $(document).ready(function (){
 	    	
 			$('.header-wrap').css({
 				'opacity' :  1-(UserScroll/600),
-	    		// 'transform' : 'translate(0px,' + (UserScroll/3)+"px)"
+				//'transform' : 'translate(0px,' + (UserScroll/3)+"px)"
 	    	});
 
 	    }
@@ -72,7 +72,6 @@ $(window).load(function() {
 	document.getElementById('title').innerHTML = greetings[greeting_id];
 
 	
-/*
 	var images = [
 	      "matt-red.jpg"
 	    , "matt-green.jpg"
@@ -83,7 +82,6 @@ $(window).load(function() {
 	var dir = 'assets/img/';
 	var images_id = Math.floor(Math.random() * images.length);
 	document.getElementById('header-cover').style.backgroundImage = "url(" + dir + images[images_id] + ")";
-*/
     
 });
 	
