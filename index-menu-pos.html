@@ -22,12 +22,45 @@
 	
 	<script type="text/javascript" src="assets/menu/js/jquery.mmenu.js"></script>
 	<script type="text/javascript">
-	   $(function() {
-	      $("#menu").mmenu({
-	         position: "right",
-	         zposition: "push"
-	      });
-	   });
+	   
+	   		$(function() {
+	   		$("#menu").mmenu({
+		         position: "right",
+		         zposition: "push"
+		      });
+	   		
+			var $menu = $('nav#menu'),
+				$html = $('html, body');
+
+			$menu.mmenu();
+			$menu.find( 'li > a' ).on(
+				'click',
+				function()
+				{
+					var href = $(this).attr( 'href' );
+
+					//	if the clicked link is linked to an anchor, scroll the page to that anchor 
+					if ( href.slice( 0, 1 ) == '#' )
+					{
+						$menu.one(
+							'closed.mm',
+							function()
+							{
+								setTimeout(
+									function()
+									{
+										$html.animate({
+											scrollTop: $( href ).offset().top
+										});	
+									}, 10
+								);	
+							}
+						);						
+					}
+				}
+			);
+		});
+
 	</script>	
 	<!-- Testing -->
 	<style type="text/css">
@@ -111,7 +144,7 @@
 		<nav id="menu">
 			<ul>
 				<li><a href="#header">Introduction</a></li>
-				<li><a href="#projects">Projects</a></li>
+				<li><a href="#experiences">Experiences</a></li>
 				<li><a href="#journal">Journal</a></li>
 				<li><a href="#sayhello">Say Hello</a></li>
 			</ul>

@@ -162,6 +162,19 @@ h2 {
 	width: 30px;
 }
 
+.btn {
+	@include border-radius(5px);
+	border: 2px solid #fff;
+	padding: 10px;
+	
+	font-family: 'steagal_ze_medium';
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: em(15);
+	color: #fff;
+	text-decoration: none;
+}
+
 /* Page Sections
 ============================================================================*/
 
@@ -176,7 +189,7 @@ header {
 			//@include span-columns(12);
 			//margin-top: 250px;
 			position: absolute;
-			top: 40%;
+			top: 30%;
 			width: 90%;
 			h1 {
 				margin: 0;
@@ -190,7 +203,7 @@ header {
 				font-size: em(15);
 				color: #fff;
 				line-height: 1.5;
-				margin-bottom: 5px;
+				margin: 5px 0;
 				-webkit-transition: font-size 0.3s ease-out; 
 	     		   -moz-transition: font-size 0.3s ease-out; 
 		 		     -o-transition: font-size 0.3s ease-out; 
@@ -198,6 +211,7 @@ header {
 			}	
 			p {
 				margin-top: 0;
+				margin-bottom: 30px;
 			}			
 		}
 	}
@@ -264,7 +278,7 @@ header {
 			padding: 40px;
 			.intro {
 				//@include span-columns(10);
-				top: 40%;
+				top: 30%;
 				width: 70%;
 				h1 {
 					font-size: em(60);
@@ -298,7 +312,7 @@ header {
 		.header-wrap {
 			.intro {
 				//@include span-columns(8);
-				top: 40%;
+				top: 30%;
 				width: 60%;
 				h1 {
 					font-size: em(70);
@@ -329,7 +343,7 @@ header {
 		.header-wrap {
 			.intro {
 				//@include span-columns(6);
-				top: 40%;
+				top: 30%;
 				width: 50%;
 				h1 {
 					font-size: em(80);
@@ -353,8 +367,8 @@ header {
 				// position: relative;
 				// top: 300px;
 				
+				top: 30%;				
 				width: 50%;
-				top: 40%;
 				position: absolute;
 				max-width: 600px;
 				h1 {

@@ -98,6 +98,20 @@ h2 {
   display: block;
   width: 30px; }
 
+.btn {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  padding: 10px;
+  font-family: 'steagal_ze_medium';
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.9375em;
+  color: #fff;
+  text-decoration: none; }
+
 /* Page Sections
 ============================================================================*/
 header {
@@ -114,7 +128,7 @@ header {
     padding: 20px; }
     header .header-wrap .intro {
       position: absolute;
-      top: 40%;
+      top: 30%;
       width: 90%; }
       header .header-wrap .intro h1 {
         margin: 0;
@@ -127,13 +141,14 @@ header {
         font-size: 0.9375em;
         color: #fff;
         line-height: 1.5;
-        margin-bottom: 5px;
+        margin: 5px 0;
         -webkit-transition: font-size 0.3s ease-out;
         -moz-transition: font-size 0.3s ease-out;
         -o-transition: font-size 0.3s ease-out;
         transition: font-size 0.3s ease-out; }
       header .header-wrap .intro p {
-        margin-top: 0; }
+        margin-top: 0;
+        margin-bottom: 30px; }
 
 .section-wrap {
   background-color: #f2f0ed; }
@@ -201,7 +216,7 @@ header {
   header .header-wrap {
     padding: 40px; }
     header .header-wrap .intro {
-      top: 40%;
+      top: 30%;
       width: 70%; }
       header .header-wrap .intro h1 {
         font-size: 3.75em; }
@@ -216,7 +231,7 @@ header {
     background-color: #1e9c5b; }
 
   header .header-wrap .intro {
-    top: 40%;
+    top: 30%;
     width: 60%; }
     header .header-wrap .intro h1 {
       font-size: 4.375em; } }
@@ -229,7 +244,7 @@ header {
     font-size: 3.75em; }
 
   header .header-wrap .intro {
-    top: 40%;
+    top: 30%;
     width: 50%; }
     header .header-wrap .intro h1 {
       font-size: 5em; } }
@@ -239,8 +254,8 @@ header {
     background-color: #da453d; }
 
   header .header-wrap .intro {
+    top: 30%;
     width: 50%;
-    top: 40%;
     position: absolute;
     max-width: 600px; }
     header .header-wrap .intro h1 {
