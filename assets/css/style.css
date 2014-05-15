@@ -63,15 +63,15 @@ h1 {
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: 2.1875em; }
+  font-size: 3.125em; }
 
 h2 {
   font-family: 'steagal_ze_medium';
-  color: #333333;
+  color: #333;
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: 2.1875em;
+  font-size: 3.125em;
   text-align: left; }
 
 /* Full Screen BG
@@ -115,7 +115,7 @@ h2 {
 /* Page Sections
 ============================================================================*/
 header {
-  max-width: 68em;
+  max-width: 88%;
   margin-left: auto;
   margin-right: auto;
   height: 100%; }
@@ -124,12 +124,11 @@ header {
     display: table;
     clear: both; }
   header .header-wrap {
-    background-color: transparent !important;
-    padding: 20px; }
+    background-color: transparent !important; }
     header .header-wrap .intro {
       position: absolute;
       top: 30%;
-      width: 90%; }
+      padding: 0 5% 0 0; }
       header .header-wrap .intro h1 {
         margin: 0;
         font-size: 3.125em;
@@ -153,23 +152,36 @@ header {
 .section-wrap {
   background-color: #f2f0ed; }
   .section-wrap section {
-    max-width: 68em;
+    max-width: 88%;
     margin-left: auto;
     margin-right: auto;
-    height: 600px; }
+    padding: 60px 0; }
     .section-wrap section:after {
       content: "";
       display: table;
       clear: both; }
     .section-wrap section .content {
+      float: left;
       display: block;
-      padding: 20px; }
-      .section-wrap section .content:after {
-        content: "";
-        display: table;
-        clear: both; }
+      margin-right: 2.35765%;
+      width: 100%; }
+      .section-wrap section .content:last-child {
+        margin-right: 0; }
       .section-wrap section .content h2 {
-        margin: 0; }
+        margin: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 20px; }
+
+.project {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 300px;
+  margin-bottom: 20px; }
+  .project:last-child {
+    margin-right: 0; }
 
 /* Responsive
 ============================================================================*/
@@ -213,28 +225,34 @@ header {
   #bottom {
     bottom: 0; }
 
-  header .header-wrap {
-    padding: 40px; }
+  header {
+    padding: 0 1%; }
     header .header-wrap .intro {
       top: 30%;
-      width: 70%; }
+      width: 80%; }
       header .header-wrap .intro h1 {
         font-size: 3.75em; }
       header .header-wrap .intro h2 {
         font-size: 1.25em; }
 
-  .section-wrap section .content {
-    padding: 40px; } }
+  .section-wrap section {
+    padding: 60px 1%; } }
 /* SM Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .indicator {
     background-color: #1e9c5b; }
 
-  header .header-wrap .intro {
-    top: 30%;
-    width: 60%; }
-    header .header-wrap .intro h1 {
-      font-size: 4.375em; } }
+  header {
+    padding: 0; }
+    header .header-wrap .intro {
+      padding: 0;
+      top: 30%;
+      width: 60%; }
+      header .header-wrap .intro h1 {
+        font-size: 4.375em; }
+
+  .section-wrap section {
+    padding: 60px 0; } }
 /* MD Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .indicator {
@@ -244,6 +262,7 @@ header {
     font-size: 3.75em; }
 
   header .header-wrap .intro {
+    padding: 0;
     top: 30%;
     width: 50%; }
     header .header-wrap .intro h1 {
@@ -256,6 +275,7 @@ header {
   header .header-wrap .intro {
     top: 30%;
     width: 50%;
+    padding: 0;
     position: absolute;
     max-width: 600px; }
     header .header-wrap .intro h1 {

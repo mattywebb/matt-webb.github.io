@@ -38,6 +38,8 @@ $yellow: #f3b32a;
 $green: #1e9c5b;
 $blue: #49b4ce;
 
+$max-width: 88%;
+
 /* HTML / Body
 ============================================================================*/
 
@@ -115,16 +117,16 @@ h1 {
 	font-weight: normal;
 	text-transform: uppercase;
 	letter-spacing: 3px;
-	font-size: em(35);
+	font-size: em(50);
 }
 
 h2 {
 	font-family: 'steagal_ze_medium';
-	color: #333333;
+	color: #333;
 	font-weight: normal;
 	text-transform: uppercase;
 	letter-spacing: 3px;
-	font-size: em(35);
+	font-size: em(50);
 	text-align: left;
 }
 
@@ -184,13 +186,12 @@ header {
 	height: 100%;	
 	.header-wrap {
 		background-color: transparent!important;
-		padding: 20px;
 		.intro {
 			//@include span-columns(12);
 			//margin-top: 250px;
 			position: absolute;
 			top: 30%;
-			width: 90%;
+			padding: 0 5% 0 0;
 			h1 {
 				margin: 0;
 				font-size: em(50);
@@ -221,15 +222,23 @@ header {
 	background-color: #f2f0ed;
 	section {
 		@include outer-container;
-		height: 600px;
+		padding: 60px 0;
 		.content {
-			@include row();
-			padding: 20px;
+			@include span-columns(12);
 			h2 {
 				margin: 0;
+				border-bottom: 1px solid rgba(0,0,0,0.1);
+				padding-bottom: 20px;
 			}
 		}
 	}
+}
+
+.project {
+	@include span-columns(4 of 12);
+	background-color: rgba(0,0,0,0.5);
+	height: 300px;
+	margin-bottom: 20px;
 }
 
 /* Responsive
@@ -274,12 +283,12 @@ header {
 	
 	header {
 		//height: 700px;
+		padding: 0 1%;
 		.header-wrap {
-			padding: 40px;
 			.intro {
 				//@include span-columns(10);
 				top: 30%;
-				width: 70%;
+				width: 80%;
 				h1 {
 					font-size: em(60);
 				}
@@ -292,8 +301,9 @@ header {
 	
 	.section-wrap {	
 		section {
+			padding: 60px 1%;
 			.content {
-				padding: 40px;
+
 			}
 		}
 	}
@@ -309,9 +319,11 @@ header {
 	}	
 	
 	header {
+		padding: 0;
 		.header-wrap {
 			.intro {
 				//@include span-columns(8);
+				padding: 0;
 				top: 30%;
 				width: 60%;
 				h1 {
@@ -325,6 +337,15 @@ header {
 		//min-height: 700px;
 		//max-height: 520px;		
 	}
+	
+	.section-wrap {	
+		section {
+			padding: 60px 0;
+			.content {
+
+			}
+		}
+	}	
 		
 }
 
@@ -343,6 +364,7 @@ header {
 		.header-wrap {
 			.intro {
 				//@include span-columns(6);
+				padding: 0;
 				top: 30%;
 				width: 50%;
 				h1 {
@@ -366,9 +388,9 @@ header {
 			.intro {
 				// position: relative;
 				// top: 300px;
-				
 				top: 30%;				
 				width: 50%;
+				padding: 0;
 				position: absolute;
 				max-width: 600px;
 				h1 {
