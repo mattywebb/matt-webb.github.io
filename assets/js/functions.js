@@ -25,7 +25,7 @@ $(document).ready(function (){
 	    		'transform' : 'translate(0px,' + -(UserScroll/2)+"px)"
 	    	});
 	    	
-			$('.header-wrap').css({
+			$('.intro').css({
 				'opacity' :  1-(UserScroll/600),
 				//'transform' : 'translate(0px,' + (UserScroll/3)+"px)"
 	    	});
@@ -39,7 +39,7 @@ $(document).ready(function (){
 	    		'transform' : 'translate(0px, 0px)'
 	    	});
 	    	
-			$('.header-wrap').css({
+			$('.intro').css({
 	    		'transform' : 'translate(0px, 0px)'
 	    	});
 	    }
@@ -49,6 +49,16 @@ $(document).ready(function (){
 	});
 	
 	};
+	
+	var feed = new Instafeed({
+        get: 'user',
+        userId: 19458322,
+        accessToken: '19458322.467ede5.d05cb68773f44bf3962ef2d94674f4d2',
+        limit: 4,
+        resolution: 'standard_resolution',
+        template: '<li><img src="{{image}}" /></li>'
+    });
+    feed.run();
 	    
 
 });

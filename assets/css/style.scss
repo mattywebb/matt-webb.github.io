@@ -3,42 +3,15 @@
 
 @import "bourbon";
 @import "bourbon", "neat";
-@import "../../bower_components/normalize-css/normalize.css";
 
-/* Custom Mixins
-============================================================================*/
+// Custom Stuff
 
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
-}
-
-// Center a Block
-@mixin center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@mixin transition-all {
-	-webkit-transition: all 0.3s ease-out; 
-       -moz-transition: all 0.3s ease-out; 
-     	 -o-transition: all 0.3s ease-out; 
-     		transition: all 0.3s ease-out;
-}
-
-/* Custom Vars
-============================================================================*/
-
-$red: #da453d;
-$orange: #f05622;
-$yellow: #f3b32a;
-$green: #1e9c5b;
-$blue: #49b4ce;
-
-$max-width: 88%;
+@import "grid-settings";
+@import "mixins";
+@import "variables";
+@import "grid-settings";
+@import "fonts";
+@import "global-elements";
 
 /* HTML / Body
 ============================================================================*/
@@ -55,100 +28,46 @@ body {
 	margin: 0;
 	height: 100%;
 	overflow: visible;
+	font-family: 'steagal_ze_light';
+	font-weight: normal;
+	font-size: em(15);
+	line-height: 1.5;
+	color: #333;
 }
 
 div {
 	position: relative;
 }
 
-/* Fonts
+/* Indicator for testing
 ============================================================================*/
 
-@font-face {
-    font-family:'steagal_ze_light';
-    src: url('../fonts/ze_steagal/zeiteffekt_steagal_light-webfont.eot');
-    src: url('../fonts/ze_steagal/zeiteffekt_steagal_light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/ze_steagal/zeiteffekt_steagal_light-webfont.woff') format('woff'),
-         url('../fonts/ze_steagal/zeiteffekt_steagal_light-webfont.ttf') format('truetype'),
-         url('../fonts/ze_steagal/zeiteffekt_steagal_light-webfont.svg') format('svg');
-    font-weight:normal;
-    font-style:normal;
+.indicator {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	z-index: 1000;
+	width: 20px;
+	height: 20px;
+	background-color: red;
+	// responsive
+	@include media($sm) {
+		background: blue; 
+	}
+	@include media($md) {
+		background: green;
+	}
+	@include media($lg) {
+		background: purple; 
+	}
+	@include media($xl) {
+		background: orange; 
+	}	
 }
-
-@font-face {
-    font-family:'steagal_ze_medium';
-    src: url('../fonts/ze_steagal/zeiteffekt_steagal_medium-webfont.eot');
-    src: url('../fonts/ze_steagal/zeiteffekt_steagal_medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/ze_steagal/zeiteffekt_steagal_medium-webfont.woff') format('woff'),
-         url('../fonts/ze_steagal/zeiteffekt_steagal_medium-webfont.ttf') format('truetype'),
-         url('../fonts/ze_steagal/zeiteffekt_steagal_medium-webfont.svg') format('svg');
-    font-weight:normal;
-    font-style:normal;
-}
-
-@font-face {
-    font-family:'steagal_ze_regular';
-    src: url('../fonts/ze_steagal/zeiteffekt_steagal_regular-webfont.eot');
-    src: url('../fonts/ze_steagal/zeiteffekt_steagal_regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/ze_steagal/zeiteffekt_steagal_regular-webfont.woff') format('woff'),
-         url('../fonts/ze_steagal/zeiteffekt_steagal_regular-webfont.ttf') format('truetype'),
-         url('../fonts/ze_steagal/zeiteffekt_steagal_regular-webfont.svg') format('svg');
-    font-weight:normal;
-    font-style:normal;
-}
-
-
-/* Type
-============================================================================*/
-
-p, h1, h2 {
-	color: #fff;
-}
-
-p {
-	font-family: 'steagal_ze_light';
-	font-weight: normal;
-	font-size: em(15);
-	line-height: 1.5;
-}
-
-h1 {
-	font-family: 'steagal_ze_medium';
-	font-weight: normal;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	font-size: em(50);
-}
-
-h2 {
-	font-family: 'steagal_ze_medium';
-	color: #333;
-	font-weight: normal;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	font-size: em(50);
-	text-align: left;
-}
-
 
 /* Full Screen BG
 ============================================================================*/
 
-#header-cover {
-	background-position: right top;
-	background-size: cover;
-	//position: absolute;
-	position: fixed;
-	top: 0;
-	z-index: 300;
-	width: 100%;
-	height: 100%;
-	background-color: $red;
-	//background-image: url('../img/matt-red.jpg');
-	//min-height: 400px;
-	//max-height: 520px;	
-}
-		
 #page-wrap { 
 	position: relative;
 	z-index: 500;
@@ -156,7 +75,35 @@ h2 {
 	height: 100%;	 	
 }
 
-/* Nav Toggle
+#header-cover {
+	background-position: right top;
+	background-size: cover;
+	position: fixed;
+	top: 0;
+	z-index: 300;
+	width: 100%;
+	height: 100%;
+	background-color: $red;	
+}
+
+/* Borders $sm +
+============================================================================*/
+
+@include media($sm) {
+	#top, #bottom, #left, #right {
+		background: #fff;
+		position: fixed;
+		z-index: 600;
+	}
+	#left, #right { top: 0; bottom: 0; width: 20px; }
+	#left { left: 0; }
+	#right { right: 0; }
+	#top, #bottom { left: 0; right: 0; height: 20px; }
+	#top { top: 0; }
+	#bottom { bottom: 0; }
+}
+
+/* Buttons / Interaction
 ============================================================================*/
 
 #toggle {
@@ -168,7 +115,6 @@ h2 {
 	@include border-radius(5px);
 	border: 2px solid #fff;
 	padding: 10px;
-	
 	font-family: 'steagal_ze_medium';
 	text-transform: uppercase;
 	letter-spacing: 3px;
@@ -177,232 +123,140 @@ h2 {
 	text-decoration: none;
 }
 
-/* Page Sections
+/* Header
 ============================================================================*/
+
+header h1, header h2, header p { color: #fff; }
 
 header {
 	@include outer-container;
-	//height: 520px;
 	height: 100%;	
-	.header-wrap {
-		background-color: transparent!important;
+	.intro {
+		position: absolute;
+		top: 40%;
+		padding: 0 5% 0 0;
+		h1 {
+			margin: 0;
+			font-size: em(50);
+			@include transition-font();
+		}
+		h2 {
+			font-size: em(15);
+			color: #fff;
+			line-height: 1.5;
+			margin: 5px 0;
+			@include transition-font();		
+		}	
+		p {
+			margin-top: 0;
+			margin-bottom: 30px;
+		}			
+	}
+	// Responsive
+	@include media($sm) {
 		.intro {
-			//@include span-columns(12);
-			//margin-top: 250px;
-			position: absolute;
+			width: 80%;
+			h1 { font-size: em(60); }
+			h2 { font-size: em(20); }
+		}
+	}
+	@include media($md) {
+		.intro {
 			top: 30%;
-			padding: 0 5% 0 0;
-			h1 {
-				margin: 0;
-				font-size: em(50);
-				-webkit-transition: font-size 0.3s ease-out; 
-	     		   -moz-transition: font-size 0.3s ease-out; 
-		 		     -o-transition: font-size 0.3s ease-out; 
-		 			    transition: font-size 0.3s ease-out;
-			}
-			h2 {
-				font-size: em(15);
-				color: #fff;
-				line-height: 1.5;
-				margin: 5px 0;
-				-webkit-transition: font-size 0.3s ease-out; 
-	     		   -moz-transition: font-size 0.3s ease-out; 
-		 		     -o-transition: font-size 0.3s ease-out; 
-		 			    transition: font-size 0.3s ease-out;				
-			}	
-			p {
-				margin-top: 0;
-				margin-bottom: 30px;
-			}			
+			width: 60%;
+			h1 { font-size: em(70); }				
+		}		
+	}
+	@include media($lg) {
+		.intro {
+			width: 50%;
+			h1 { font-size: em(80); }				
+		}		
+	}
+	@include media($xl) {
+		.intro {
+			max-width: 600px;
+			h1 { font-size: em(90); }
 		}
 	}
 }
+
+/* Content Section
+============================================================================*/
 
 .section-wrap {	
 	background-color: #f2f0ed;
 	section {
 		@include outer-container;
 		padding: 60px 0;
-		.content {
-			@include span-columns(12);
-			h2 {
-				margin: 0;
-				border-bottom: 1px solid rgba(0,0,0,0.1);
-				padding-bottom: 20px;
-			}
+		h2 {
+			border-bottom: 1px solid rgba(0,0,0,0.1);
+			padding-bottom: 20px;
+			font-size: em(50);
+			margin: 0 0 60px 0;
 		}
 	}
 }
 
-.project {
-	@include span-columns(4 of 12);
-	background-color: rgba(0,0,0,0.5);
-	height: 300px;
-	margin-bottom: 20px;
-}
-
-/* Responsive
+/* Project Specific
 ============================================================================*/
 
-.indicator {
-	width: 50px;
-	height: 50px;
-	background-color: $yellow;
+#projects {
+	margin: 0;
+	padding: 0;
+	li {
+		margin-bottom: 20px; 
+		text-align: center; 
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+		@include span-columns(12);
+		// Responsive
+		@include media($sm) {
+	    	@include span-columns(4);
+		}
+		@include media($md) {
+			@include span-columns(4);
+			@include omega(2n);
+		}
+		@include media($lg) {
+	    	@include omega-reset(2n);
+			@include span-columns(4);
+			@include omega(3n);
+		}
+		@include media($xl) {
+	    	@include omega-reset(3n);
+			@include span-columns(4);
+			@include omega(3n);
+		}
+	}		
 }
 
-/* XXS Extra small devices (phones, up to 480px) */
+/* Instafeed
+============================================================================*/
 
-/* No media query since this is the default size */
-
-/* XS Extra Breakpoint  */
-
-@media (min-width: 480px) {
-
-	.indicator {
-		background-color: $blue;
-	}
-	
-	/* Borders */
-	#top, #bottom, #left, #right {
-		background: #fff;
-		position: fixed;
-		z-index: 600;
-	}
-	
-	#left, #right { top: 0; bottom: 0; width: 20px; }
-	#left { left: 0; }
-	#right { right: 0; }
-	#top, #bottom { left: 0; right: 0; height: 20px; }
-	#top { top: 0; }
-	#bottom { bottom: 0; }
-		
-	#header-cover {
-		//min-height: 700px;
-		//max-height: 520px;			
-	}	
-	
-	header {
-		//height: 700px;
-		padding: 0 1%;
-		.header-wrap {
-			.intro {
-				//@include span-columns(10);
-				top: 30%;
-				width: 80%;
-				h1 {
-					font-size: em(60);
-				}
-				h2 {
-					font-size: em(20);
-				}
-			}
+#instafeed {
+	margin: 0;
+	padding: 0;
+	li {
+		margin-bottom: 20px;
+		img {
+			border: 10px solid #fff;
 		}
-	}
-	
-	.section-wrap {	
-		section {
-			padding: 60px 1%;
-			.content {
-
-			}
+		@include span-columns(12);
+		// Responsive
+		@include media($sm) {
+	    	@include span-columns(4);
 		}
-	}
-	
-	
-}
-
-/* SM Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-
-	.indicator {
-		background-color: $green;
-	}	
-	
-	header {
-		padding: 0;
-		.header-wrap {
-			.intro {
-				//@include span-columns(8);
-				padding: 0;
-				top: 30%;
-				width: 60%;
-				h1 {
-					font-size: em(70);
-				}				
-			}
+		@include media($md) {
+			@include span-columns(4);
+			@include omega(2n);
 		}
-	}	
-	
-	#header-cover {
-		//min-height: 700px;
-		//max-height: 520px;		
-	}
-	
-	.section-wrap {	
-		section {
-			padding: 60px 0;
-			.content {
-
-			}
+		@include media($lg) {
+	    	@include omega-reset(2n);
+			@include span-columns(3);
 		}
-	}	
-		
-}
-
-/* MD Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
-	
-	.indicator {
-		background-color: $orange;
-	}	
-	
-	h1 {
-		font-size: em(60);
-	}	
-	
-	header {
-		.header-wrap {
-			.intro {
-				//@include span-columns(6);
-				padding: 0;
-				top: 30%;
-				width: 50%;
-				h1 {
-					font-size: em(80);
-				}				
-			}
+		@include media($xl) {
+	    	@include omega-reset(3n);
+			@include span-columns(3);
 		}
-	}	
-	
-}
-
-/* LG Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { 
-	
-	.indicator {
-		background-color: $red;
-	}	
-	
-	header {
-		.header-wrap {
-			.intro {
-				// position: relative;
-				// top: 300px;
-				top: 30%;				
-				width: 50%;
-				padding: 0;
-				position: absolute;
-				max-width: 600px;
-				h1 {
-					font-size: em(90);
-				}
-			}
-		}
-	}
-	
-	#header-cover {
-		//min-height: 700px;
-		//max-height: 520px;		
-	}
-	
+	}		
 }

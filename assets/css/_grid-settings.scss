@@ -1,0 +1,19 @@
+// ------------------------------------------------------------
+// Set Bourbon’s $fg-column and $fg-gutter variables
+// to match what Bourbon Neat is doing
+// ------------------------------------------------------------
+
+$fg-column: $column;
+$fg-gutter: $gutter;
+
+// Reset Max Width
+$max-width: 88%;
+
+// Breakpoints
+
+// $xs: Is the Default --> Mobile First.
+
+$sm: new-breakpoint(min-width 480px 4);
+$md: new-breakpoint(min-width 768px 8);
+$lg: new-breakpoint(min-width 1024px 12);
+$xl: new-breakpoint(min-width 1280px 12);
