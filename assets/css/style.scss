@@ -103,6 +103,30 @@ div {
 	#bottom { bottom: 0; }
 }
 
+/* Lean Overlay
+============================================================================*/
+
+#lean_overlay {
+    position: fixed;
+    z-index:900;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+.work-modal {
+	width: 740px;
+	padding: 30px; 
+	top: 10% !important;
+    display:none;
+    background: #FFF;
+    border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.7); -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7); -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);    
+}
+
 /* Buttons / Interaction
 ============================================================================*/
 
@@ -121,6 +145,14 @@ div {
 	font-size: em(15);
 	color: #fff;
 	text-decoration: none;
+}
+
+#down {
+	position: absolute;
+	bottom: 40px;
+	display: block;
+	width: 60px;
+	margin-bottom: 0;
 }
 
 /* Header
@@ -146,6 +178,7 @@ header {
 			line-height: 1.5;
 			margin: 5px 0;
 			@include transition-font();		
+			border: none;
 		}	
 		p {
 			margin-top: 0;
@@ -189,43 +222,117 @@ header {
 	section {
 		@include outer-container;
 		padding: 60px 0;
-		h2 {
-			border-bottom: 1px solid rgba(0,0,0,0.1);
-			padding-bottom: 20px;
-			font-size: em(50);
-			margin: 0 0 60px 0;
-		}
 	}
 }
 
-/* Project Specific
+/* Project Items
 ============================================================================*/
 
 #projects {
-	margin: 0;
-	padding: 0;
-	li {
-		margin-bottom: 20px; 
-		text-align: center; 
-		border-bottom: 1px solid rgba(0,0,0,0.1);
-		@include span-columns(12);
-		// Responsive
-		@include media($sm) {
-	    	@include span-columns(4);
+	ul {
+		margin: 0;
+		padding: 0;
+		li {
+			margin-bottom: 20px; 
+			padding: 50px 0;
+			text-align: center; 
+			border-bottom: 1px solid rgba(0,0,0,0.1);
+			a:hover {
+				cursor: default;
+				opacity: 1;
+				@include media($md) {
+					cursor: pointer;
+					opacity: 0.8;
+				}
+			}
+			@include span-columns(12);
+			// Responsive
+			@include media($sm) {
+		    	@include span-columns(4);
+			}
+			@include media($md) {
+				@include span-columns(4);
+				@include omega(2n);
+			}
+			@include media($lg) {
+		    	@include omega-reset(2n);
+				@include span-columns(4);
+				@include omega(3n);
+			}
+			@include media($xl) {
+		    	@include omega-reset(3n);
+				@include span-columns(4);
+				@include omega(3n);
+			}
 		}
-		@include media($md) {
-			@include span-columns(4);
-			@include omega(2n);
-		}
-		@include media($lg) {
-	    	@include omega-reset(2n);
-			@include span-columns(4);
-			@include omega(3n);
-		}
-		@include media($xl) {
-	    	@include omega-reset(3n);
-			@include span-columns(4);
-			@include omega(3n);
+	}		
+}
+
+/* Experience
+============================================================================*/
+
+#experience {
+	dl { 
+		margin: 0;
+		padding: 0;
+		li {
+			margin-bottom: 20px; 
+			border: 5px solid rgba(0,0,0,0.05);
+			padding: 20px;
+			font-size: em(20);
+			font-family: 'steagal_ze_light';
+			overflow: hidden;
+			span.label {
+				background-color: rgba(0,0,0,0.05);
+				color: #fff;
+				padding: 10px 20px;
+				margin: -10px 0 20px -10px;
+				display: block;
+				@include border-radius(200px);
+				border-bottom-left-radius: 0;
+				border-top-left-radius: 0;
+				@include media($sm) {
+					display: inline;
+					margin: -10px 10px -10px -10px;
+				}				
+				@include media($md) {
+					display: block;
+					margin: -10px 0 20px -10px;
+				}
+				@include media($lg) {
+					display: inline;
+					margin: -10px 10px -10px -10px;
+				}				
+			}
+			span.red { background-color: $red; }
+			span.orange { background-color: $orange; }
+			span.yellow { background-color: $yellow; }		
+			span.green { background-color: $green; }	
+			span.blue { background-color: $blue; }					
+			span.year {
+				float: right;
+			}
+			@include span-columns(12);
+			// Responsive
+			@include media($sm) {
+		    	@include span-columns(4);
+			}
+			@include media($md) {
+				@include span-columns(4);
+				@include omega(2n);
+			}
+			@include media($lg) {
+		    	@include omega-reset(2n);
+				@include span-columns(6);
+				@include omega(2n);
+			}
+			/*
+			@include media($xl) {
+		    	@include omega-reset(3n);
+				@include span-columns(4);
+				@include omega(3n);
+			}
+			*/
 		}
 	}		
 }
@@ -239,7 +346,8 @@ header {
 	li {
 		margin-bottom: 20px;
 		img {
-			border: 10px solid #fff;
+			/* border: 10px solid #fff; */
+			@include border-radius(10px);
 		}
 		@include span-columns(12);
 		// Responsive
@@ -247,6 +355,55 @@ header {
 	    	@include span-columns(4);
 		}
 		@include media($md) {
+			@include span-columns(4);
+			@include omega(2n);
+		}
+		@include media($lg) {
+	    	@include omega-reset(2n);
+			@include span-columns(3);
+		}
+		@include media($xl) {
+	    	@include omega-reset(3n);
+			@include span-columns(3);
+		}
+	}		
+}
+
+/* Contact Det's
+============================================================================*/
+
+#contact {
+	margin: 0;
+	padding: 0;
+	li {
+		margin-bottom: 40px;
+		text-align: center;
+		img {
+			width: 30%;
+			margin: 0 20px;
+			@include media($sm) {
+				width: 40%;
+			}			
+			@include media($md) {
+				width: 30%;
+			}
+			@include media($lg) {
+				width: 50%;
+			}
+		}
+		a {
+			span {
+				display: block;
+			}
+		}
+		@include span-columns(12);
+		// Responsive
+		@include media($sm) {
+	    	@include span-columns(2);
+	    	@include omega(2n);
+		}
+		@include media($md) {
+			@include omega-reset(2n);
 			@include span-columns(4);
 			@include omega(2n);
 		}

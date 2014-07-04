@@ -18,11 +18,40 @@ h1 {
 }
 
 h2 {
+	font-size: em(50);
 	font-family: 'steagal_ze_medium';
 	color: #333;
 	font-weight: normal;
 	text-transform: uppercase;
 	letter-spacing: 3px;
-	font-size: em(30);
 	text-align: left;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	padding-bottom: 20px;
+	margin: 0;
+	display: inline-block;
+}
+
+h3 {
+	font-size: em(20);
+	color: #333;
+	margin-bottom: 60px;
+}
+
+h4 {
+	font-size: em(20);
+	color: #333;
+	margin-bottom: 30px;
+}
+
+a {
+	font-size: em(20);
+	color: #333;
+	margin-bottom: 60px;
+	font-weight: bold;
+	text-decoration: none;
+	@include transition-all();
+}
+
+a:hover {
+	opacity: 0.5;
 }
