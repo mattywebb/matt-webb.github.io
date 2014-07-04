@@ -108,7 +108,6 @@ $(window).load(function() {
 	document.getElementById('title').innerHTML = greetings[greeting_id];
 
 	
-/*
 	var images = [
 	      "matt-red.jpg"
 	    , "matt-green.jpg"
@@ -119,7 +118,6 @@ $(window).load(function() {
 	var dir = 'assets/img/';
 	var images_id = Math.floor(Math.random() * images.length);
 	document.getElementById('header-cover').style.backgroundImage = "url(" + dir + images[images_id] + ")";
-*/
     
 });
 	
