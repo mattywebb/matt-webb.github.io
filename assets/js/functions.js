@@ -27,7 +27,51 @@ $(document).ready(function (){
 	});
 	
 	// Header Slide
+	
+	if (document.body.clientWidth > 768) {
+	
+	$(function() {
+		$('a[rel*=leanModal]').leanModal({closeButton: ".modal_close" });		
+	});
+        
+	$(window).scroll(function() {
+	
+		var UserScroll;
+	    	UserScroll = $(this).scrollTop();
+	
+		if ( $(document).scrollTop() <= 1680 ) {
+			
+			$('#header-cover').css({
+	    		'transform' : 'translate(0px,' + -(UserScroll/2)+"px)"
+	    	});
+	    	
+			$('.intro').css({
+				'opacity' :  1-(UserScroll/600),
+	    	});
+	    	
+			$('#down').css({
+				'opacity' :  1-(UserScroll/600),
+				'transform' : 'translate(0px,' + (UserScroll/3)+"px)"
+	    	});	    	
 
+	    }
+	    
+			    else  {
+		    $('#header-cover').css({
+	    		//'opacity' :  '1',
+	    		'transform' : 'translate(0px, 0px)'
+	    	});
+	    	
+			$('.intro').css({
+	    		'transform' : 'translate(0px, 0px)'
+	    	});
+	    }
+		
+		
+		
+	});
+	
+	};
 	
 	var feed = new Instafeed({
         get: 'user',
