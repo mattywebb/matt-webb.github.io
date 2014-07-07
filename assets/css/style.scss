@@ -151,7 +151,7 @@ div {
 	position: absolute;
 	bottom: 20px;
 	display: block;
-	width: 30px;
+	width: 40px;
 	margin-bottom: 0;
 	@include media($md) {
 		background-color: red;
@@ -170,7 +170,7 @@ header {
 	height: 100%;	
 	.intro {
 		position: absolute;
-		top: 25%;
+		top: 20%;
 		padding: 0 5% 0 0;
 		h1 {
 			margin: 0;
