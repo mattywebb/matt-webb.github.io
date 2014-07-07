@@ -42,7 +42,8 @@ $(document).ready(function (){
 		if ( $(document).scrollTop() <= 1680 ) {
 			
 			$('#header-cover').css({
-	    		'transform' : 'translate(0px,' + -(UserScroll/2)+"px)"
+	    		'transform' : 'translate(0px,' + -(UserScroll/2)+"px)",
+	    		'opacity' :  '1'
 	    	});
 	    	
 			$('.intro').css({
@@ -56,9 +57,9 @@ $(document).ready(function (){
 
 	    }
 	    
-			    else  {
+			else  {
 		    $('#header-cover').css({
-	    		//'opacity' :  '1',
+	    		'opacity' :  '0',
 	    		'transform' : 'translate(0px, 0px)'
 	    	});
 	    	
