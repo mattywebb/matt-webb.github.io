@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-	font-size: em(50);
+	font-size: em(30);
 	font-family: 'steagal_ze_medium';
 	color: #333;
 	font-weight: normal;
@@ -29,6 +29,9 @@ h2 {
 	padding-bottom: 20px;
 	margin: 0;
 	display: inline-block;
+	@include media($sm) {
+		font-size: em(50);
+	}	
 }
 
 h3 {
