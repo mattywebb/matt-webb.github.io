@@ -57,7 +57,7 @@ $(document).ready(function (){
 
 	    }
 	    
-			else  {
+		else  {
 		    $('#header-cover').css({
 	    		'opacity' :  '0',
 	    		'transform' : 'translate(0px, 0px)'
@@ -67,8 +67,6 @@ $(document).ready(function (){
 	    		'transform' : 'translate(0px, 0px)'
 	    	});
 	    }
-		
-		
 		
 	});
 	

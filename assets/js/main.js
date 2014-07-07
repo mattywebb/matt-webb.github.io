@@ -65,13 +65,12 @@ $(document).ready(function (){
 		if ( $(document).scrollTop() <= 1680 ) {
 			
 			$('#header-cover').css({
-	    		//'opacity' :  1-(UserScroll/600),
-	    		'transform' : 'translate(0px,' + -(UserScroll/2)+"px)"
+	    		'transform' : 'translate(0px,' + -(UserScroll/2)+"px)",
+	    		'opacity' :  '1'
 	    	});
 	    	
 			$('.intro').css({
 				'opacity' :  1-(UserScroll/600),
-				//'transform' : 'translate(0px,' + (UserScroll/3)+"px)"
 	    	});
 	    	
 			$('#down').css({
@@ -81,10 +80,9 @@ $(document).ready(function (){
 
 	    }
 	    
-		/*
-	    else  {
+		else  {
 		    $('#header-cover').css({
-	    		//'opacity' :  '1',
+	    		'opacity' :  '0',
 	    		'transform' : 'translate(0px, 0px)'
 	    	});
 	    	
@@ -92,8 +90,6 @@ $(document).ready(function (){
 	    		'transform' : 'translate(0px, 0px)'
 	    	});
 	    }
-		*/
-		
 		
 	});
 	
@@ -143,3 +139,4 @@ $(window).load(function() {
 	document.getElementById('header-cover').style.backgroundImage = "url(" + dir + images[images_id] + ")";
     
 });
+	
