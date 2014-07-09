@@ -53,8 +53,42 @@ a {
 	font-weight: bold;
 	text-decoration: none;
 	@include transition-all();
+	img {
+		border: 0;
+	}
 }
 
 a:hover {
 	opacity: 0.5;
+}
+
+/* Text Selection */
+::-moz-selection {
+	background: $green; 
+	color: #fff; 
+	text-shadow: none;
+}
+
+::selection {
+	background: $green; 
+	color: #fff; 
+	text-shadow: none;
+} 
+
+/*	Tap Highlight */
+a:link {
+	-webkit-tap-highlight-color: transparent;
+} 
+
+ins { 
+	background-color: $red; 
+	color: #000;
+	text-decoration: none;
+}
+
+mark {	
+	background-color: $red; 
+	color: #000; 
+	font-style: italic; 
+	font-weight: bold;
 }
