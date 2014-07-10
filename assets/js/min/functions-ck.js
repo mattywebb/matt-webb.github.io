@@ -1,15 +1,22 @@
+$(document).ready(function (){
+	if(!Modernizr.svg) {
+	   $('img[src*="svg"]').attr('src', function() {
+	       return $(this).attr('src').replace('.svg', '.png');
+	   });
+	}	
+});
+
+
 /* trigger when page is ready */
 $(document).ready(function (){
 
-
 	// SVG -> PNG Fallback through Modernizer
+/*
 	if(!Modernizr.svg) {
-
-    $('img[src*="svg"]').attr('src', function() {
-        return $(this).attr('src').replace('.svg', '.png');
-    });
+	    $('img[src*="svg"]').attr('src', function() {
+	        return $(this).attr('src').replace('.svg', '.png');
+	    });
 	}
-	
 	if($("html").hasClass("no-svg")) {
 		alert("Please upgrade your browser");
 
@@ -17,10 +24,10 @@ $(document).ready(function (){
 	        return $(this).attr('src').replace('.svg', '.png');
 	    });
 	}
+*/
 	
 	
 	// Smooth Scroll
-	
 	$(function() {
 	  $('a[href*=#]:not([href=#])').click(function() {
 	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -37,7 +44,6 @@ $(document).ready(function (){
 	});
 	
 	// Header Slide
-	
 	if (document.body.clientWidth > 768) {
 	
 		$(function() {
@@ -50,7 +56,6 @@ $(document).ready(function (){
 		    	UserScroll = $(this).scrollTop();
 		
 			if ( $(document).scrollTop() <= 1680 ) {
-				
 				$('#header-cover').css({
 		    		'transform' : 'translate(0px,' + -(UserScroll/2)+"px)",
 		    		'opacity' :  '1'
@@ -64,9 +69,7 @@ $(document).ready(function (){
 					'opacity' :  1-(UserScroll/600),
 					'transform' : 'translate(0px,' + (UserScroll/3)+"px)"
 		    	});	    	
-	
 		    }
-		    
 			else  {
 			    $('#header-cover').css({
 		    		'opacity' :  '0',
