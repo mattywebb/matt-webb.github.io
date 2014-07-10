@@ -287,7 +287,7 @@ header {
 ============================================================================*/
 
 #experience {
-	dl { 
+	ul { 
 		margin: 0;
 		padding: 0;
 		li {
@@ -443,6 +443,9 @@ header {
 
 /* IE8 fallback
 ============================================================================*/
+h4.none {
+	display: none;
+}
 @media screen and (min-width: 1024px) {
 	html.lt-ie9 {
 		#projects ul li {
@@ -451,7 +454,7 @@ header {
 		#projects ul li:last-child {
 			margin-right: 0;
 		}
-		#experience dl li {
+		#experience ul li {
 			width: 47.0%;
 		}
 		#contact li {

@@ -428,10 +428,10 @@ header {
 
 /* Experience
 ============================================================================*/
-#experience dl {
+#experience ul {
   margin: 0;
   padding: 0; }
-  #experience dl li {
+  #experience ul li {
     margin-bottom: 20px;
     border: 5px solid rgba(0, 0, 0, 0.05);
     padding: 20px;
@@ -442,7 +442,7 @@ header {
     display: block;
     margin-right: 2.35765%;
     width: 100%; }
-    #experience dl li span.label {
+    #experience ul li span.label {
       background-color: rgba(0, 0, 0, 0.05);
       color: #fff;
       padding: 10px 20px;
@@ -455,79 +455,79 @@ header {
       border-bottom-left-radius: 0;
       border-top-left-radius: 0; }
       @media screen and (min-width: 480px) {
-        #experience dl li span.label {
+        #experience ul li span.label {
           float: left;
           display: inline;
           margin: -10px 10px -10px -10px; } }
       @media screen and (min-width: 768px) {
-        #experience dl li span.label {
+        #experience ul li span.label {
           display: block;
           float: none;
           margin: -10px 0 20px -10px; } }
       @media screen and (min-width: 1024px) {
-        #experience dl li span.label {
+        #experience ul li span.label {
           float: left;
           display: inline;
           margin: -10px 10px -10px -10px; } }
-    #experience dl li span.red {
+    #experience ul li span.red {
       background-color: #da453d; }
-    #experience dl li span.orange {
+    #experience ul li span.orange {
       background-color: #f05622; }
-    #experience dl li span.yellow {
+    #experience ul li span.yellow {
       background-color: #f3b32a; }
-    #experience dl li span.green {
+    #experience ul li span.green {
       background-color: #1e9c5b; }
-    #experience dl li span.blue {
+    #experience ul li span.blue {
       background-color: #49b4ce; }
-    #experience dl li span.position {
+    #experience ul li span.position {
       display: block; }
       @media screen and (min-width: 480px) {
-        #experience dl li span.position {
+        #experience ul li span.position {
           float: left;
           display: inline; } }
-    #experience dl li span.year {
+    #experience ul li span.year {
       display: block; }
       @media screen and (min-width: 480px) {
-        #experience dl li span.year {
+        #experience ul li span.year {
           float: right;
           display: inline; } }
-    #experience dl li:last-child {
+    #experience ul li:last-child {
       margin-right: 0; }
     @media screen and (min-width: 480px) {
-      #experience dl li {
+      #experience ul li {
         float: left;
         display: block;
         margin-right: 7.42297%;
         width: 100%; }
-        #experience dl li:last-child {
+        #experience ul li:last-child {
           margin-right: 0; } }
     @media screen and (min-width: 768px) {
-      #experience dl li {
+      #experience ul li {
         float: left;
         display: block;
         margin-right: 3.57866%;
         width: 48.21067%; }
-        #experience dl li:last-child {
+        #experience ul li:last-child {
           margin-right: 0; }
-        #experience dl li:nth-child(2n) {
+        #experience ul li:nth-child(2n) {
           margin-right: 0; }
-        #experience dl li:nth-child(2n+1) {
+        #experience ul li:nth-child(2n+1) {
           clear: left; } }
     @media screen and (min-width: 1024px) {
-      #experience dl li {
+      #experience ul li {
         float: left;
         display: block;
         margin-right: 2.35765%;
         width: 48.82117%; }
-        #experience dl li:nth-child(2n) {
+        #experience ul li:nth-child(2n) {
           margin-right: 2.35765%; }
-        #experience dl li:nth-child(2n+1) {
+        #experience ul li:nth-child(2n+1) {
           clear: none; }
-        #experience dl li:last-child {
+        #experience ul li:last-child {
           margin-right: 0; }
-        #experience dl li:nth-child(2n) {
+        #experience ul li:nth-child(2n) {
           margin-right: 0; }
-        #experience dl li:nth-child(2n+1) {
+        #experience ul li:nth-child(2n+1) {
           clear: left; } }
 
 /* Instafeed
@@ -677,12 +677,15 @@ header {
 
 /* IE8 fallback
 ============================================================================*/
+h4.none {
+  display: none; }
+
 @media screen and (min-width: 1024px) {
   html.lt-ie9 #projects ul li {
     width: 29.5%; }
   html.lt-ie9 #projects ul li:last-child {
     margin-right: 0; }
-  html.lt-ie9 #experience dl li {
+  html.lt-ie9 #experience ul li {
     width: 47.0%; }
   html.lt-ie9 #contact li {
     width: 22%; }
