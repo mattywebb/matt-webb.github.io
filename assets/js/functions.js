@@ -12,14 +12,12 @@ $(document).ready(function (){
     });
 	}
 	
-	if($('html').hasClass("no-svg")){
 
-	alert("Please upgrade your browser");
 
-    $('img[src*="svg"]').attr('src', function() {
+    $('html.no-svg img[src*="svg"]').attr('src', function() {
         return $(this).attr('src').replace('.svg', '.png');
     });
-	}
+	
 	
 	// Smooth Scroll
 	
