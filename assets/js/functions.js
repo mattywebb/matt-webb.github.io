@@ -90,7 +90,7 @@ $(document).ready(function(){
 	var dir = 'assets/img/';
 	var images_id = Math.floor(Math.random() * images.length);
 	var imgURL = "url(" + dir + images[images_id] + ")";
-/* 	document.getElementById('header-cover').style.backgroundImage = imgURL; */
+// 	document.getElementById('header-cover').style.backgroundImage = imgURL; 
 	$('#header-cover').css("background-image",imgURL);
 
 
