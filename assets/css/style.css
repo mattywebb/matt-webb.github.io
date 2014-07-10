@@ -692,7 +692,7 @@ html.lt-ie9 #header-cover-ie8 {
 
 @media screen and (min-width: 1024px) {
   html.lt-ie9 #projects ul li {
-    width: 28%; }
+    width: 27%; }
   html.lt-ie9 #projects ul li:last-child {
     margin-right: 0; }
   html.lt-ie9 #experience ul li {

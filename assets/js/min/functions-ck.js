@@ -8,7 +8,7 @@ $(document).ready(function(){
 	        return $(this).attr('src').replace('.svg', '.png');
 	    });
 	}
-	
+		
 	
 	// Smooth Scroll
 	$(function() {
