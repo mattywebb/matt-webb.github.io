@@ -4,15 +4,15 @@ $(document).ready(function (){
 
 	// SVG -> PNG Fallback through Modernizer
 	if(!Modernizr.svg) {
-	
-	alert("Please upgrade your browser");
-	
     $('img[src*="svg"]').attr('src', function() {
         return $(this).attr('src').replace('.svg', '.png');
     });
 	}
 	
 	if($('html').hasClass("no-svg")){
+
+	alert("Please upgrade your browser");
+
     $('img[src*="svg"]').attr('src', function() {
         return $(this).attr('src').replace('.svg', '.png');
     });
