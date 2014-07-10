@@ -79,10 +79,7 @@ $(document).ready(function(){
     feed.run();
 	    
 
-});
 
-$(window).load(function() {
-    
 
     var greetings = [ "hello", "ciao", "welcome", "howdy", "greetings", "salut", "hallo", "hola", "Gday", "Hey"];
 	var greeting_id = Math.floor(Math.random() * greetings.length);
@@ -95,6 +92,7 @@ $(window).load(function() {
 	var imgURL = "url(" + dir + images[images_id] + ")";
 /* 	document.getElementById('header-cover').style.backgroundImage = imgURL; */
 	$('#header-cover').css("background-image",imgURL);
-    
+
+
 });
-	
+
