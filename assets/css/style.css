@@ -680,6 +680,15 @@ header {
 h4.none {
   display: none; }
 
+html.lt-ie9 #header-cover-ie8 {
+  background: url("assets/img/matt-yellow.jpg") no-repeat right top;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  z-index: 300;
+  width: 100%;
+  height: 100%; }
+
 @media screen and (min-width: 1024px) {
   html.lt-ie9 #projects ul li {
     width: 29.5%; }
@@ -690,12 +699,4 @@ h4.none {
   html.lt-ie9 #contact li {
     width: 22%; }
   html.lt-ie9 #header-cover {
-    display: none; }
-  html.lt-ie9 #header-cover-ie8 {
-    background: url("assets/img/matt-yellow.jpg") no-repeat right top;
-    background-size: cover;
-    position: fixed;
-    top: 0;
-    z-index: 300;
-    width: 100%;
-    height: 100%; } }
+    display: none; } }
