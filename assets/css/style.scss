@@ -445,6 +445,9 @@ header {
 		#projects ul li {
 			width: 29.5%;		
 		}
+		#projects ul li:last-child {
+			margin-right: 0;
+		}
 		#experience dl li {
 			width: 47.0%;
 		}
