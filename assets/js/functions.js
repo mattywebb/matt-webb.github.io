@@ -9,6 +9,12 @@ $(document).ready(function (){
     });
 	}
 	
+	if($('html').hasClass("no-svg")){
+    $('img[src*="svg"]').attr('src', function() {
+        return $(this).attr('src').replace('.svg', '.png');
+    });
+	}
+	
 	// Smooth Scroll
 	
 	$(function() {
