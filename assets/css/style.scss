@@ -447,8 +447,11 @@ h4.none {
 	display: none;
 }
 html.lt-ie9 {
+	#header-cover {
+		display: none;
+	}
 	#header-cover-ie8 {
-		background: url('assets/img/matt-yellow.jpg') no-repeat right top;
+		background: url('assets/img/matt-yellow.jpg') no-repeat right top red;
 		background-size: cover;
 		position: fixed;
 		top: 0;
@@ -470,9 +473,6 @@ html.lt-ie9 {
 		}
 		#contact li {
 			width: 22%;
-		}
-		#header-cover {
-			display: none;
 		}
 	}
 }
