@@ -680,10 +680,8 @@ header {
 h4.none {
   display: none; }
 
-html.lt-ie9 #header-cover {
-  display: none; }
 html.lt-ie9 #header-cover-ie8 {
-  background: url("assets/img/matt-yellow.jpg") no-repeat right top red;
+  background: url("assets/img/matt-yellow.jpg") no-repeat right top;
   background-size: cover;
   position: fixed;
   top: 0;
@@ -699,4 +697,6 @@ html.lt-ie9 #header-cover-ie8 {
   html.lt-ie9 #experience ul li {
     width: 47.0%; }
   html.lt-ie9 #contact li {
-    width: 22%; } }
+    width: 22%; }
+  html.lt-ie9 #header-cover {
+    display: none; } }
