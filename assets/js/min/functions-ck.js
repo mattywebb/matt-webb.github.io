@@ -3,11 +3,20 @@
 $(document).ready(function(){
 
 	// SVG -> PNG Fallback through Modernizer
+/*
 	if(!Modernizr.svg) {
 	    $('img[src*="svg"]').attr('src', function() {
 	        return $(this).attr('src').replace('.svg', '.png');
 	    });
 	}
+		
+*/
+	 if (!Modernizr.svg) {
+        $('img[src$=svg]').each(function(index, item) {
+            imagePath = $(item).attr('src');
+            $(item).attr('src',imagePath.slice(0,-3)+'png');
+        });
+    }		
 		
 	
 	// Smooth Scroll

@@ -235,16 +235,5 @@
 		<script src="assets/js/instafeed.min.js" type="text/javascript"></script>
 		<script src="assets/js/jquery.leanModal.min.js" type="text/javascript"></script>
 		<script src="assets/js/min/functions-ck.js"></script>
-		<script>
-			$(document).ready(function(){
-			
-				// SVG -> PNG Fallback through Modernizer
-				if(!Modernizr.svg) {
-				    $('img[src*="svg"]').attr('src', function() {
-				        return $(this).attr('src').replace('.svg', '.png');
-				    });
-				}
-			})
-		</script>
 	</body>
 </html>
