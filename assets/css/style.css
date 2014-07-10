@@ -682,4 +682,6 @@ header {
   html.lt-ie9 #experience dl li {
     width: 47.0%; }
   html.lt-ie9 #contact li {
-    width: 22%; } }
+    width: 22%; }
+  html.lt-ie9 #header-cover {
+    background-image: url(../img/matt-yellow.jpg); } }
