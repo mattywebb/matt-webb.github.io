@@ -96,24 +96,6 @@ $(document).ready(function(){
 	}, {page: 1, per_page: 4});
 
 
-	//Greetings
-	    var greetings = [
-	      "hello"
-	    , "ciao"
-	    , "welcome"
-	    , "howdy"
-	    , "greetings"
-	    , "salut"
-	    , "hallo"
-	    , "hola"
-	    , "Gday"
-	    , "Hey"
-	];
-	var greeting_id = Math.floor(Math.random() * greetings.length);
-	document.getElementById('title').innerHTML = greetings[greeting_id];
-
-
-
 	//bkgd image
 	var mattBkgd = function(bkgdColor, imgName){
 		this.bkgdColor = bkgdColor,
@@ -142,8 +124,21 @@ $(document).ready(function(){
 	theElement.style.backgroundColor = theColor;
 
 
-
-
+	//Greetings
+	var greetings = [
+	      "hello"
+	    , "ciao"
+	    , "welcome"
+	    , "howdy"
+	    , "greetings"
+	    , "salut"
+	    , "hallo"
+	    , "hola"
+	    , "Gday"
+	    , "Hey"
+	];
+	var greeting_id = Math.floor(Math.random() * greetings.length);
+	document.getElementById('title').innerHTML = greetings[greeting_id];
 
 
 	
