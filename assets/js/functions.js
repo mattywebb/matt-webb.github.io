@@ -3,15 +3,8 @@
 $(document).ready(function(){
 
 	// SVG -> PNG Fallback through Modernizer
-/*
-	if(!Modernizr.svg) {
-	    $('img[src*="svg"]').attr('src', function() {
-	        return $(this).attr('src').replace('.svg', '.png');
-	    });
-	}
-		
-*/
-	 if (!Modernizr.svg) {
+
+	if (!Modernizr.svg) {
         $('img[src$=svg]').each(function(index, item) {
             imagePath = $(item).attr('src');
             $(item).attr('src',imagePath.slice(0,-3)+'png');
@@ -90,7 +83,7 @@ $(document).ready(function(){
     
     //JRIBBBLE
     // API Ref: http://api.dribbble/players/:id/shots
-	$.jribbble.getShotsByPlayerId('lukestevenson', function (playerShots) {
+	$.jribbble.getShotsByPlayerId('mattywebb', function (playerShots) {
 	var html = [];
 	$.each(playerShots.shots, function (i, shot) {
 	html.push('<div class="shot"><a href="' + shot.url + '" target="_blank">');
@@ -99,7 +92,7 @@ $(document).ready(function(){
 	});
 	
 	$('#shotsByPlayerId').html(html.join(''));
-	}, {page: 1, per_page: 3});
+	}, {page: 1, per_page: 4});
 
 
     var greetings = [ "hello", "ciao", "welcome", "howdy", "greetings", "salut", "hallo", "hola", "Gday", "Hey"];
