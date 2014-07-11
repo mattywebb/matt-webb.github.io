@@ -81,14 +81,15 @@ $(document).ready(function(){
     });
     feed.run();
     
-    //JRIBBBLE
+    
+    // JRIBBBLE
     // API Ref: http://api.dribbble/players/:id/shots
 	$.jribbble.getShotsByPlayerId('mattywebb', function (playerShots) {
 	var html = [];
 	$.each(playerShots.shots, function (i, shot) {
-	html.push('<div class="shot"><a href="' + shot.url + '" target="_blank">');
-	html.push('<img class="shot-image" src="' + shot.image_url + '" ');
-	html.push('alt="' + shot.title + '"></a></div>');
+	html.push('<li><a href="' + shot.url + '" target="_blank">');
+	html.push('<img src="' + shot.image_url + '" ');
+	html.push('alt="' + shot.title + '"></a></li>');
 	});
 	
 	$('#shotsByPlayerId').html(html.join(''));
@@ -109,4 +110,3 @@ $(document).ready(function(){
 
 
 });
-
