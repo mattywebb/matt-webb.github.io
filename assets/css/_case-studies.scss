@@ -1,0 +1,59 @@
+/* Case Studies Pages
+============================================================================*/
+
+body#cs-page {
+	background-color: #f2f0ed;
+}
+
+.cs-wrap {
+	width: 100%;
+	height: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+	section {
+		@include outer-container;
+	}
+}
+
+#cs-head {
+	#nla-logo {
+		width: 240px;
+		margin: 60px auto 30px auto;
+		display: block;
+	}	
+}
+
+#cs-content {
+	padding: 0;
+	height: 80%;
+	width: 100%;
+	.container {
+		height: 100%;
+		width: 100%;
+		padding-top: 3.5%;
+		background: url('../case-studies/desktop-frame.svg') no-repeat;
+	}
+	.content {
+		height: 90%;
+		overflow: scroll;
+	}
+}
+
+#cs-details {
+	h2 {
+		font-size: em(30);
+		display: block;
+		margin-bottom: 20px;
+	}
+	p {
+		line-height: em(30px);
+		@include columns(2 8em);
+		@include column-gap(40px);
+	}
+}
+
+footer {
+	margin: 50px 0 80px 0;
+	@include outer-container;
+	text-align: center;
+}

@@ -26,6 +26,7 @@ $(document).ready(function(){
 	      }
 	    }
 	  });
+	  alert(yesss);
 	});
 	
 	// Header Slide

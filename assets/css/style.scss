@@ -12,6 +12,7 @@
 @import "grid-settings";
 @import "fonts";
 @import "global-elements";
+@import "case-studies";
 
 /* HTML / Body
 ============================================================================*/
@@ -141,13 +142,13 @@ div {
 
 .btn {
 	@include border-radius(5px);
-	border: 2px solid #fff;
+	border: 2px solid #333;
 	padding: 10px;
 	font-family: 'steagal_ze_medium';
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	font-size: em(15);
-	color: #fff;
+	color: #333;
 	text-decoration: none;
 }
 
