@@ -16,11 +16,48 @@ body#cs-page {
 }
 
 #cs-head {
+	height: 150px;
 	#nla-logo {
 		width: 240px;
-		margin: 60px auto 30px auto;
+		margin: 50px 0 0 -120px;
 		display: block;
+		position: absolute;
+		left: 50%;
 	}	
+	.switcher-nav {
+		ul {
+			overflow: hidden;
+			padding: 0;
+			float: right;
+			margin-top: 60px;
+			li {
+				margin: 0;
+				float: left;
+				list-style-type: none;
+				img {
+					width: 30px;
+					height: 30px;
+				}
+			}
+			.tablet-btn {
+				padding-top: 2px;
+				img{
+					width: 25px;
+					height: 25px;
+				}
+			}
+			.mobile-btn {
+				padding-top: 5px;
+				img {
+					width: 20px;
+					height: 20px;
+				}
+			}
+			a {
+				padding: 5px;
+			}
+		}
+	}
 }
 
 #cs-content {
@@ -58,6 +95,23 @@ body#cs-page {
 			overflow: scroll;
 		}
 	}
+	.mobile {
+		width: 30%;
+		margin: 0 auto;
+		padding-top: 8%;
+		padding-bottom: 8%;
+		
+		background-image: url('../case-studies/iphone-frame-top.svg'), url('../case-studies/iphone-frame-bottom.svg');
+		background-position: center top, center bottom;
+		background-repeat: no-repeat;
+		
+		.content {
+			border-left: 20px solid #333;
+			border-right: 20px solid #333;
+			height: 100%;
+			overflow: scroll;
+		}
+	}	
 }
 
 #cs-details {
