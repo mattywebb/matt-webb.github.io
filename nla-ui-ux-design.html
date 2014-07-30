@@ -52,6 +52,8 @@
 			<section id="cs-details">
 				<h2>National Library of Australia</h2>
 				<p>The NLA approached us with a classic hoarse before the cart type situation, they had a recently built website that had been constructed with little attention paid to the UI/UX of the site. We were commissioned to conduct a full design review and provide a document which outlined potential weakness's as well as best practice &amp; the suggested solutions we were proposing to have implemented without disrupting the underlying structure which had already been put in place. From there the team went about providing all of the design assets necessary, including online style guide, PSD Layouts, notes and instructions for implementation of the new front end across Desktop, Tablet & Mobile layouts. Unfortunately their internal team of developers have not managed to find the time to implement our work.</p>
+			<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+			<button>Get External Content</button>
 			</section>
 			
 			<footer id="footer">
@@ -68,32 +70,12 @@
 		
 		<!-- JS -->
 		<script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-
-				// Smooth Scroll
-				$(function() {
-				  $('a[href*=#]:not([href=#])').click(function() {
-				    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-				      var target = $(this.hash);
-				      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-				      if (target.length) {
-				        $('html,body').animate({
-				          scrollTop: target.offset().top
-				        }, 1000);
-				        return false;
-				      }
-				    }
-				  });
-				});
-
-				//Ajax
-			    $('.test.').click(function(){
-			        $('#cs-content').load('test.html');
-			    });
-
-			});
-			
+		<script>
+		$(document).ready(function(){
+		  $("button").click(function(){
+		    $("#div1").load("demo-file.txt");
+		  });
+		});
 		</script>
 		
 	</body>
