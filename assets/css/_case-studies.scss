@@ -1,3 +1,67 @@
+/* Case Studies Index
+============================================================================*/
+
+body#cs-index {
+	background-color: #f2f0ed;
+	height: auto;
+	h1 {
+		text-align: center;
+		color: #333;
+		font-size: em(30);
+		margin: 60px 0;
+	}	
+	#cs-content {
+		height: auto;
+		width: auto;
+	}
+}
+
+.clients {
+	margin: 0;
+	padding: 0;
+	li {
+		margin-bottom: 80px;
+		text-align: center;
+		img {
+			width: 70%;
+			margin: 0 20px;
+			@include media($sm) {
+				width: 70%;
+			}			
+			@include media($lg) {
+				width: 80%;
+			}
+		}
+		#svc {
+			width: 40%;
+		}
+		#tri {
+			margin-top: 10px;
+		}
+		@include span-columns(12);
+		// Responsive
+		@include media($sm) {
+	    	@include span-columns(2);
+	    	@include omega(2n);
+		}
+		@include media($md) {
+			@include omega-reset(2n);
+			@include span-columns(4);
+			@include omega(2n);
+		}
+		@include media($lg) {
+	    	@include omega-reset(2n);
+			@include span-columns(3);
+			@include omega(4n);
+		}
+		@include media($xl) {
+	    	@include omega-reset(3n);
+			@include span-columns(3);
+			@include omega(4n);
+		}
+	}		
+}
+
 /* Case Studies Pages
 ============================================================================*/
 
@@ -17,19 +81,38 @@ body#cs-page {
 
 #cs-head {
 	height: 150px;
-	#nla-logo {
+	#cs-logo {
 		width: 240px;
-		margin: 50px 0 0 -120px;
+		margin: 20px auto;
 		display: block;
-		position: absolute;
-		left: 50%;
+		// Responsive
+		@include media($sm) {
+			margin: 50px 0 0 -120px;
+			position: absolute;
+			left: 50%;	
+		}
 	}	
 	.switcher-nav {
+		padding: 10px 0;
+		margin: 20px 0 20px 0;
+		border-top: 1px solid rgba(0,0,0,0.1);
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+		// Responsive
+		@include media($sm) {
+			border: none;
+			margin: 0;
+			padding: 0;
+		}
 		ul {
 			overflow: hidden;
 			padding: 0;
-			float: right;
-			margin-top: 60px;
+			margin: 0 auto;
+			width: 110px;
+			// Responsive
+			@include media($sm) {
+				float: right;
+				margin-top: 60px;
+			}
 			li {
 				margin: 0;
 				float: left;
@@ -62,39 +145,93 @@ body#cs-page {
 
 #cs-content {
 	padding: 0;
-	height: 80%;
 	width: 100%;
 	text-align: center;
+	margin-bottom: 50px;
+	
+	// Responsive
+	@include media($sm) {
+		height: 70%;
+		max-height: 300px;
+	}
+	@include media($md) {
+		max-height: 400px;
+	}
+	@include media($lg) {
+		max-height: 500px;
+	}		
+	@include media($xl) {
+		max-height: 800px;
+	}	
+			
 	.container {
-		height: 90%;
 		width: 100%;
+		// Responsive
+		@include media($sm) {
+			height: 100%;
+		}
 		.content {
-			background-color: #333;
+			// Responsive
+			@include media($sm) {
+				height: 100%;
+				overflow: scroll;
+			}
 		}
 	}
 	.desktop {
 		padding-top: 3.5%;
-		background: url('../case-studies/desktop-frame.svg') no-repeat;
+		background: url('../../select/assets/desktop-frame.svg') no-repeat;
 		.content {
-			height: 100%;
-			overflow: scroll;
+			background-color: #f2f0ed;
 		}
 	}
 	.tablet {
-		width: 50%;
 		margin: 0 auto;
-		padding-top: 5.5%;
-		padding-bottom: 5.5%;
-		
-		background-image: url('../case-studies/ipad-frame-top.svg'), url('../case-studies/ipad-frame-bottom.svg');
+		padding-top: 11%;
+		padding-bottom: 11%;
+		background-image: url('../../select/assets/ipad-frame-top.svg'), url('../../select/assets/ipad-frame-bottom.svg');
 		background-position: center top, center bottom;
 		background-repeat: no-repeat;
-		
+		// Responsive
+		@include media($sm) {
+			padding-top: 4.5%;
+			padding-bottom: 4.5%;		
+			width: 40%;
+		}
+		@include media($md) {
+			padding-top: 3.2%;
+			padding-bottom: 3.5%;
+			width: 30%;
+		}	
+		@include media($lg) {
+
+		}
+		@include media($xl) {
+			padding-top: 5%;
+			padding-bottom: 5%;
+			width: 45%;
+		}							
 		.content {
-			border-left: 20px solid #333;
-			border-right: 20px solid #333;
-			height: 100%;
-			overflow: scroll;
+			border-left: 5px solid #333;
+			border-right: 5px solid #333;
+			background-color: #333;
+			// Responsive
+			@include media($sm) {
+				border-left: 5px solid #333;
+				border-right: 5px solid #333;
+			}
+			@include media($md) {
+				border-left: 10px solid #333;
+				border-right: 10px solid #333;
+			}
+			@include media($lg) {
+				border-left: 15px solid #333;
+				border-right: 15px solid #333;
+			}
+			@include media($xl) {
+				border-left: 20px solid #333;
+				border-right: 20px solid #333;
+			}
 		}
 	}
 	.mobile {
@@ -102,16 +239,13 @@ body#cs-page {
 		margin: 0 auto;
 		padding-top: 8%;
 		padding-bottom: 8%;
-		
 		background-image: url('../case-studies/iphone-frame-top.svg'), url('../case-studies/iphone-frame-bottom.svg');
 		background-position: center top, center bottom;
 		background-repeat: no-repeat;
-		
 		.content {
 			border-left: 20px solid #333;
 			border-right: 20px solid #333;
-			height: 100%;
-			overflow: scroll;
+			background-color: #333;
 		}
 	}	
 }
@@ -125,8 +259,11 @@ body#cs-page {
 	}
 	p {
 		line-height: em(30px);
-		@include columns(2 8em);
-		@include column-gap(40px);
+		// Responsive
+		@include media($md) {
+			@include columns(2 8em);
+			@include column-gap(40px);
+		}
 	}
 }
 
