@@ -77,42 +77,6 @@
 		
 		<!-- JS -->
 		<script src="../bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
-		<script>
-		var newHash     = '',
-		   $mainContent = $('#cs-content');
-		
-		$('nav').delegate('a', 'click', function() {
-			window.location.hash = $(this).attr('href');
-			return false;
-		});
-
-		$(window).bind('hashchange', function() {
-			newHash = window.location.hash.substr(1);
-			console.log(newHash);
-			$mainContent.load(newHash + " #cs-content > *");
-			
-			//update the classname
-			$('#cs-content').removeAttr('class');
-
-
-			if (newHash.indexOf("desktop") >= 0){
-				$('#cs-content').addClass("desktop");
-			}else if (newHash.indexOf("tablet") >= 0){
-				$('#cs-content').addClass("tablet");
-			}else {
-				$('#cs-content').addClass("mobile");
-			}
-
-		});
-		
-		
-		//preloader
-		$('#cs-content .content img').load(function(){
-			$(this).addClass("loaded");
-		});
-
-
-		</script>
-		
+		<script src="../assets/js/folio.js" type="text/javascript"></script>
 	</body>
 </html>
