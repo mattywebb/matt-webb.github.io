@@ -30,62 +30,40 @@
 	<![endif]-->
 	<script src="../assets/js/modernizr.custom.js" type="text/javascript"></script>
 </head>
-	<body id="cs-index">	
+	<body id="cs-page">	
 		<div class="indicator"></div>	
 		<div class="cs-wrap">
 		
 			<section id="cs-head">
-				<!--<a href="index.html" title="Main Website">
-					<img id="logo" src="assets/img/mw-logo.svg" alt="Matt Webb - Digital Professional & UI Designer">
-				</a>-->
-				<h1>Selected Work</h1>
+				<a id="back-arrow" href="index.html" title="back to main"><img src="../assets/img/left-arrow.svg" title="Back Arrow" /></a>			
+				<img id="cs-logo" src="assets/ait-logo.svg" title="Aitken Lawyers Logo" />
+				<nav class="switcher-nav">
+					<ul>
+						<li class="desktop-btn"><a href="ait-desktop.html" title="desktop"><img id="desktop-icon" src="assets/desktop.svg" title="View Desktop" /></a></li>
+						<li class="tablet-btn"><a href="ait-tablet.html" title="tablet"><img id="tablet-icon" src="assets/tablet.svg" title="View Tablet" /></a></li>
+						<li class="mobile-btn"><a href="ait-mobile.html" title="mobile"><img id="desktop-icon" src="assets/mobile.svg" title="View Mobile" /></a></li>
+					</ul>
+				</nav>
 			</section>
 			
-			<section id="cs-content">
-				<ul class="clients">
-					<li>
-						<a href="nla-desktop.html" title="NLA">
-							<img id="nla" src="assets/nla-logo.svg" alt="NLA">
-						</a>
-					</li>
-					<li>
-						<a href="tsf-desktop.html" title="Telstra Sportsfan">
-							<img id="tsf" src="assets/tsf-logo.svg" alt="Telstra Sportsfan">
-						</a>
-					</li>
-					<li>
-						<a href="aus-application.html" title="Aussie Homeloans">
-							<img id="aus" src="assets/aus-logo.svg" alt="Aussie Homeloans">
-						</a>
-					</li>					
-					<li>
-						<a href="tri-desktop.html" title="Triradar">
-							<img id="tri" src="assets/tri-logo.svg" alt="Triradar">
-						</a>
-					</li>										
-					<li>
-						<a href="gjc-desktop.html" title="Gloria Jeans Coffee's">
-							<img id="gjc" src="assets/gjc-logo.svg" alt="Gloria Jeans">
-						</a>
-					</li>
-					<li>
-						<a href="svc-application.html" title="SVC">
-							<img id="svc" src="assets/svc-logo.svg" alt="SVC">
-						</a>
-					</li>
-					<li>
-						<a href="lim-desktop.html" title="Limousines.com.au">
-							<img id="lim" src="assets/lim-logo.svg" alt="Limousines">
-						</a>
-					</li>
-					<li>
-						<a href="sqd-desktop.html" title="The Squad">
-							<img id="sqd" src="assets/sqd-logo.svg" alt="The Squad">
-						</a>
-					</li>															
-					
-				</ul>
+			<span id="loader">
+				<section id="cs-content" class="tablet">
+					<div class="container">
+						<div class="content">
+							<img src="assets/ait-tablet.jpg" alt="ait-tablet">
+						</div>
+					</div>
+				</section>
+			</span>
+			
+			<section id="cs-details">
+				<h2>Aitken Lawyers</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis sit amet est ac accumsan. Donec tristique fermentum ante eget faucibus. Duis pellentesque id dolor ut mollis. Cras a porttitor quam, eget facilisis nulla. Nullam scelerisque egestas tincidunt. Proin interdum aliquet mauris, a eleifend diam pharetra non. In eget nisl in ipsum accumsan adipiscing. Proin laoreet est nec magna sagittis tincidunt. Cras ante tellus, vehicula quis ipsum non, ullamcorper varius tellus.</p>
 			</section>
+			
+			<footer id="footer">
+				<a class="btn" href="index.html" title="back to index">Back to Main</a>
+			</footer>
 			
 		</div><!-- /section-wrap -->	
 				
@@ -97,6 +75,21 @@
 		
 		<!-- JS -->
 		<script src="../bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+		<script>
+		var newHash     = '',
+		   $mainContent = $('#loader');
+		
+		$('nav').delegate('a', 'click', function() {
+			window.location.hash = $(this).attr('href');
+			return false;
+		});
+
+		$(window).bind('hashchange', function() {
+			newHash = window.location.hash.substr(1);
+			$mainContent.load(newHash + " #loader > *");
+		});
+
+		</script>
 		
 	</body>
 </html>

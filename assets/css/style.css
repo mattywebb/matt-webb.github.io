@@ -231,6 +231,9 @@ body#cs-page {
 
 #cs-head {
   height: 150px; }
+  #cs-head #mw-logo {
+    width: 100px;
+    margin-top: 50px; }
   #cs-head #back-arrow {
     float: left;
     display: block;
