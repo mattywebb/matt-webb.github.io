@@ -35,10 +35,11 @@
 		<div class="cs-wrap">
 		
 			<section id="cs-head">
+				<a id="back-arrow" href="index.html" title="back to main"><img src="../assets/img/left-arrow.svg" title="Back Arrow" /></a>			
 				<img id="cs-logo" src="assets/tri-logo.svg" title="TriRadar Logo" />
 				<nav class="switcher-nav">
 					<ul>
-						<li class="desktop-btn"><a href="tri-ui-ux-design.html" title="desktop"><img id="desktop-icon" src="assets/desktop.svg" title="View Desktop" /></a></li>
+						<li class="desktop-btn"><a href="tri-desktop.html" title="desktop"><img id="desktop-icon" src="assets/desktop.svg" title="View Desktop" /></a></li>
 						<li class="tablet-btn"><a href="tri-tablet.html" title="tablet"><img id="tablet-icon" src="assets/tablet.svg" title="View Tablet" /></a></li>
 						<li class="mobile-btn"><a href="tri-mobile.html" title="mobile"><img id="desktop-icon" src="assets/mobile.svg" title="View Mobile" /></a></li>
 					</ul>
@@ -46,8 +47,8 @@
 			</section>
 			
 			<span id="loader">
-				<section id="cs-content">
-					<div class="container tablet">
+				<section id="cs-content" class="tablet">
+					<div class="container">
 						<div class="content">
 							<img src="assets/tri-tablet.jpg" alt="nla-tablet">
 						</div>
@@ -61,7 +62,7 @@
 			</section>
 			
 			<footer id="footer">
-				<a class="btn" href="#" title="back to index">Back to Main</a>
+				<a class="btn" href="index.html" title="back to index">Back to Main</a>
 			</footer>
 			
 		</div><!-- /section-wrap -->	
@@ -82,9 +83,7 @@
 			window.location.hash = $(this).attr('href');
 			return false;
 		});
-		
-		// Not all browsers support hashchange
-		// For older browser support: http://benalman.com/projects/jquery-hashchange-plugin/
+
 		$(window).bind('hashchange', function() {
 			newHash = window.location.hash.substr(1);
 			$mainContent.load(newHash + " #loader > *");

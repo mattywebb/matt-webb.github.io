@@ -35,27 +35,30 @@
 		<div class="cs-wrap">
 		
 			<section id="cs-head">
-				<img id="cs-logo" src="assets/nla-logo.svg" title="NLA Logo" />
+				<a id="back-arrow" href="index.html" title="back to main"><img src="../assets/img/left-arrow.svg" title="Back Arrow" /></a>			
+				<img id="cs-logo" src="assets/sqd-logo.svg" title="Limousines Logo" />
 				<nav class="switcher-nav">
 					<ul>
-						<li class="desktop-btn"><a href="nla-ui-ux-design.html" title="desktop"><img id="desktop-icon" src="assets/desktop.svg" title="View Desktop" /></a></li>
-						<li class="tablet-btn"><a href="nla-tablet.html" title="tablet"><img id="tablet-icon" src="assets/tablet.svg" title="View Tablet" /></a></li>
-						<li class="mobile-btn"><a href="nla-mobile.html" title="mobile"><img id="desktop-icon" src="assets/mobile.svg" title="View Mobile" /></a></li>
+						<li class="desktop-btn"><a href="sqd-desktop.html" title="desktop"><img id="desktop-icon" src="assets/desktop.svg" title="View Desktop" /></a></li>
+						<li class="tablet-btn"><a href="sqd-tablet.html" title="tablet"><img id="tablet-icon" src="assets/tablet.svg" title="View Tablet" /></a></li>
+						<li class="mobile-btn"><a href="sqd-mobile.html" title="mobile"><img id="desktop-icon" src="assets/mobile.svg" title="View Mobile" /></a></li>
 					</ul>
 				</nav>
 			</section>
 			
-			<section id="cs-content">
-				<div class="container desktop">
-					<div class="content">
-						<img src="assets/nla-desktop.jpg" alt="nla-desktop">
+			<span id="loader">
+				<section id="cs-content" class="tablet">
+					<div class="container">
+						<div class="content">
+							<img src="assets/sqd-tablet.jpg" alt="lim-tablet">
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			</span>
 			
 			<section id="cs-details">
-				<h2>National Library of Australia</h2>
-				<p>The NLA approached us with a classic hoarse before the cart type situation, they had a recently built website that had been constructed with little attention paid to the UI/UX of the site. We were commissioned to conduct a full design review and provide a document which outlined potential weakness's as well as best practice &amp; the suggested solutions we were proposing to have implemented without disrupting the underlying structure which had already been put in place. From there the team went about providing all of the design assets necessary, including online style guide, PSD Layouts, notes and instructions for implementation of the new front end across Desktop, Tablet & Mobile layouts. Unfortunately their internal team of developers have not managed to find the time to implement our work.</p>
+				<h2>The Squad</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis sit amet est ac accumsan. Donec tristique fermentum ante eget faucibus. Duis pellentesque id dolor ut mollis. Cras a porttitor quam, eget facilisis nulla. Nullam scelerisque egestas tincidunt. Proin interdum aliquet mauris, a eleifend diam pharetra non. In eget nisl in ipsum accumsan adipiscing. Proin laoreet est nec magna sagittis tincidunt. Cras ante tellus, vehicula quis ipsum non, ullamcorper varius tellus.</p>
 			</section>
 			
 			<footer id="footer">
@@ -74,7 +77,7 @@
 		<script src="../bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
 		<script>
 		var newHash     = '',
-		   $mainContent = $('#cs-content');
+		   $mainContent = $('#loader');
 		
 		$('nav').delegate('a', 'click', function() {
 			window.location.hash = $(this).attr('href');
@@ -83,8 +86,9 @@
 
 		$(window).bind('hashchange', function() {
 			newHash = window.location.hash.substr(1);
-			$mainContent.load(newHash + " #cs-content > *");
+			$mainContent.load(newHash + " #loader > *");
 		});
+
 		</script>
 		
 	</body>
