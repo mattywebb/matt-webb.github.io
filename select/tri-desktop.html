@@ -29,6 +29,8 @@
 		<script type="text/javascript" src="../assets/js/selectivizr-min.js"></script>
 	<![endif]-->
 	<script src="../assets/js/modernizr.custom.js" type="text/javascript"></script>
+	<style>
+	</style>
 </head>
 	<body id="cs-page">	
 		<div class="indicator"></div>	
@@ -105,10 +107,10 @@
 		
 		
 		//preloader
-		$('#cs-content .content').append('<img src="../assets/icons/ajax-loader.gif" class="preloader" alt="ajax-loader" width="218" height="149">');
-		$('#cs-content .content img').ready(function(){
-			$('#cs-content .content').remove('.preloader');
-		})
+		$('#cs-content .content img').load(function(){
+			$(this).addClass("loaded");
+		});
+
 
 		</script>
 		

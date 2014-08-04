@@ -479,3 +479,27 @@ html.lt-ie9 {
 		}
 	}
 }
+
+
+/* Loaders
+============================================================================*/
+
+#cs-content {
+	.content {
+		background: url('../assets/icons/ajax-loader.gif') center center no-repeat;
+		img{
+			opacity: 0;
+			transition:1s;
+			-moz-transition:1s;
+			-webkit-transition:1s;
+		}
+		img.loaded{
+			opacity: 1;
+		}
+	}
+}
+
+
+
+
+
