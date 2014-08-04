@@ -102,6 +102,13 @@
 			}
 
 		});
+		
+		
+		//preloader
+		$('#cs-content .content').append('<img src="../assets/icons/ajax-loader.gif" class="preloader" alt="ajax-loader" width="218" height="149">');
+		$('#cs-content .content img').ready(function(){
+			$('#cs-content .content').remove('.preloader');
+		})
 
 		</script>
 		
