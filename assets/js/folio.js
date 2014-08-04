@@ -16,6 +16,7 @@
 	$(window).bind('hashchange', function() {
 		newHash = window.location.hash.substr(1);
 		console.log(newHash);
+		$('#cs-content .content img').css('display','none');
 		$mainContent.load(newHash + " #cs-content > *", function(){
 				$('#cs-content .content img').load(function(){
 				$(this).addClass("loaded");			
