@@ -1031,7 +1031,7 @@ html.lt-ie9 #header-cover-ie8 {
 /* Loaders
 ============================================================================*/
 #cs-content .content {
-  background: url("../assets/icons/ajax-loader.gif") center center no-repeat; }
+  background: url("../icons/ajax-loader.gif") center center no-repeat; }
   #cs-content .content img {
     opacity: 0;
     transition: 1s;
