@@ -1,8 +1,10 @@
+	$(document).ready(function(){
+		$('#cs-content .content img').load(function(){
+			$(this).addClass("loaded");
+		});	
+	});
 	
 	
-	
-
-
 	var newHash     = '',
 	   $mainContent = $('#cs-content');
 	
@@ -38,8 +40,3 @@
 
 
 
-	$(document).ready(function(){
-		$('#cs-content .content img').load(function(){
-			$(this).addClass("loaded");
-		});	
-	});

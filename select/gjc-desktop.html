@@ -74,21 +74,7 @@
 		
 		<!-- JS -->
 		<script src="../bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
-		<script>
-		var newHash     = '',
-		   $mainContent = $('#loader');
-		
-		$('nav').delegate('a', 'click', function() {
-			window.location.hash = $(this).attr('href');
-			return false;
-		});
-
-		$(window).bind('hashchange', function() {
-			newHash = window.location.hash.substr(1);
-			$mainContent.load(newHash + " #loader > *");
-		});
-
-		</script>
+		<script src="../assets/js/folio.js" type="text/javascript"></script>
 		
 	</body>
 </html>
