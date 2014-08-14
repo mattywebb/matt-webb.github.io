@@ -301,7 +301,7 @@ body#cs-page {
     @media screen and (min-width: 480px) {
       #cs-content .container .content {
         height: 100%;
-        overflow: scroll; } }
+        overflow-y: scroll; } }
 
 .app {
   width: 100%; }
@@ -331,26 +331,30 @@ body#cs-page {
     max-height: 750px; } }
 .desktop .container {
   padding-top: 3.5%;
-  background: url("../../select/assets/desktop-frame.svg") no-repeat; }
+  background: url("../../select/assets/desktop-frame.svg") no-repeat center top; }
   .desktop .container .content {
     background-color: #f2f0ed; }
 
 @media screen and (min-width: 480px) {
   .tablet {
     width: 30%;
-    height: 60%; } }
+    height: 60%;
+    max-height: 350px; } }
 @media screen and (min-width: 768px) {
   .tablet {
     width: 30%;
-    height: 65%; } }
+    height: 65%;
+    max-height: 400px; } }
 @media screen and (min-width: 1024px) {
   .tablet {
     width: 30%;
-    height: 70%; } }
+    height: 70%;
+    max-height: 500px; } }
 @media screen and (min-width: 1280px) {
   .tablet {
     width: 35%;
-    height: 70%; } }
+    height: 70%;
+    max-height: 800px; } }
 .tablet .container {
   margin: 0 auto;
   background-image: url("../../select/assets/ipad-frame-top.svg"), url("../../select/assets/ipad-frame-bottom.svg");

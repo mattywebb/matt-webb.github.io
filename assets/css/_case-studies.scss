@@ -173,7 +173,7 @@ body#cs-page {
 			// Responsive
 			@include media($sm) {
 				height: 100%;
-				overflow: scroll;
+				overflow-y: scroll;
 			}
 		}
 	}	
@@ -211,7 +211,7 @@ body#cs-page {
 	}
 	.container {
 		padding-top: 3.5%;
-		background: url('../../select/assets/desktop-frame.svg') no-repeat;
+		background: url('../../select/assets/desktop-frame.svg') no-repeat center top;
 		.content {
 			background-color: #f2f0ed;
 		}
@@ -223,22 +223,22 @@ body#cs-page {
 	@include media($sm) {
 		width: 30%;
 		height: 60%;
-		//max-height: 350px;		
+		max-height: 350px;		
 	}
 	@include media($md) {
 		width: 30%;
 		height: 65%;
-		//max-height: 400px;
+		max-height: 400px;
 	}
 	@include media($lg) {
 		width: 30%;
 		height: 70%;
-		//max-height: 500px;
+		max-height: 500px;
 	}		
 	@include media($xl) {
 		width: 35%;
 		height: 70%;
-		//max-height: 800px;
+		max-height: 800px;
 	}
 	.container {
 		margin: 0 auto;
