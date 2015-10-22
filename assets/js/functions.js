@@ -26,7 +26,6 @@ $(document).ready(function(){
 	      }
 	    }
 	  });
-/* 	  alert(yesss); */
 	});
 	
 	// Header Slide
@@ -95,52 +94,5 @@ $(document).ready(function(){
 	
 	$('#shotsByPlayerId').html(html.join(''));
 	}, {page: 1, per_page: 4});
-
-
-	//bkgd image
-	var mattBkgd = function(bkgdColor, imgName){
-		this.bkgdColor = bkgdColor,
-		this.imgName = imgName	
-	}
-	
-	var red		= new mattBkgd("#da453d", "matt-red.jpg");
-	var orange	= new mattBkgd("#f05622", "matt-orange.jpg");
-	var yellow	= new mattBkgd("#f3b32a", "matt-yellow.jpg");
-	var green	= new mattBkgd("#1e9c5b", "matt-green.jpg");
-	var blue	= new mattBkgd("#49b4ce", "matt-blue.jpg");
-	
-	var mattBkgdArray = [red, orange, yellow, green, blue];
-	var dir = 'assets/img/';
-	var mattBkgdArray_id = Math.floor(Math.random() * mattBkgdArray.length);
-	var mattBkgdArray_idResult = mattBkgdArray[mattBkgdArray_id];
-	
-	var theImage = mattBkgdArray_idResult.imgName;
-	var theColor = mattBkgdArray_idResult.bkgdColor;
-	var theImageURL = "url(" + dir + theImage + ")"
-	
-	
-	var theElement = document.getElementById("header-cover");
-	
-	theElement.style.backgroundImage = theImageURL;
-	theElement.style.backgroundColor = theColor;
-
-
-	//Greetings
-	var greetings = [
-	      "hello"
-	    , "ciao"
-	    , "welcome"
-	    , "howdy"
-	    , "greetings"
-	    , "salut"
-	    , "hallo"
-	    , "hola"
-	    , "Gday"
-	    , "Hey"
-	];
-	var greeting_id = Math.floor(Math.random() * greetings.length);
-	document.getElementById('title').innerHTML = greetings[greeting_id];
-
-
 	
 });
